@@ -362,3 +362,25 @@ substitució" d'un error d'extracció).
 - Les jornades **1, 2 i 3** no tenen cap columna de rebot.
 - Hi ha un `3?` a `Punts RO a favor` de la j4 (dubte de l'anotador). Es reporta
   com a incidència i compta com a buit.
+
+## Desplegament a Streamlit Cloud
+
+L'app es desplega des del repo de GitHub (privat). Configuració:
+
+- **Main file path**: `app/Inici.py`
+- **Python version**: 3.11 o superior (`almeda_pbp/etiquetes.py` i
+  `jugadores.py` fan servir `tomllib`, que és stdlib només a partir de 3.11).
+  Es tria a *Advanced settings* del diàleg de desplegament; no hi ha cap
+  fitxer al repo que ho fixi.
+- **Dades**: no cal configurar res. El PBP són els `.xlsx` del repo i el
+  boxscore surt de `dades/lf2.sqlite`, també versionat. L'app només llegeix.
+  Per actualitzar el que es veu al núvol: executar l'scraper en local, fer
+  commit del SQLite i push — Streamlit Cloud redesplega sol.
+- **Secció Developer**: no hi surt, i és volgut. Apareix només si
+  `almeda_pbp.config.mode_dev()` és cert, és a dir si hi ha un fitxer buit
+  `.mode_dev` a l'arrel (ignorat per git, per tant mai al núvol) o si
+  `ALMEDA_DEV=1`. En una màquina nova cal crear el marcador per recuperar-la:
+  `touch .mode_dev` (o `New-Item .mode_dev` a PowerShell).
+
+Els informes `.docx` de `25-26/data/report/` no són al repo (vegeu
+`.gitignore`), així que tampoc al núvol.
