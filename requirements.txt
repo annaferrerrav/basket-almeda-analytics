@@ -1,0 +1,18 @@
+streamlit>=1.40
+pandas>=2.1
+numpy>=1.26
+plotly>=5.22
+openpyxl>=3.1
+
+# Informe PDF. matplotlib redibuixa els gràfics i reportlab munta el document.
+# No s'usa Kaleido (l'exportador d'imatges de Plotly) a propòsit: es descarrega
+# un Chrome sencer i falla en entorns sense navegador com Streamlit Cloud.
+matplotlib>=3.8
+reportlab>=4.0
+
+# Scraper de la FEB (almeda_pbp/feb/). L'app només llegeix el SQLite, però els
+# tests importen el client, així que fan falta encara que no s'scrapegi.
+requests>=2.31
+beautifulsoup4>=4.12
+
+pytest>=8.0

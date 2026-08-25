@@ -1,0 +1,26 @@
+JUGADORES DETECTADES - BASKET ALMEDA
+======================================================================
+
+Maria Llodra         | LLODRA JAEN, MARIA                       | jornades: 1, 2, 3, 4, 5, 6, 7 | existent
+Marina               | GARCIA MENÉNDEZ, MARINA                  | jornades: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25, 26 | existent
+Balibrea             | BALIBREA OLIVERAS, CLAUDIA               | jornades: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 | existent
+Tierno               | TIERNO MARTÍ, LAURA                      | jornades: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 | existent
+Puyi                 | PUJOL MARTINEZ, CRISTINA                 | jornades: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 | existent
+Jové                 | JOVE FUSTE, LAIA                         | jornades: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 | existent
+Carlota              | DIAZ-GUERRA PRATS, CARLOTA               | jornades: 1, 2, 3, 4, 5, 6, 8, 9, 12, 13, 14, 15, 18, 19, 24 | existent
+Moreno               | MORENO MENGIBAR, CARLA                   | jornades: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 | existent
+Cojo                 | COJOCARIU, ANDREEA MARIA                 | jornades: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 | existent
+Dana                 | PERIS FONS, DANA                         | jornades: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 | existent
+Mar                  | COLL-VINENT OLLE, MAR                    | jornades: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 | existent
+Rebote               | REBOTE (Rebotes                          | jornades: 1, 2, 6, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 26 | NOVA
+Ivet                 | HOMS FATJO, IVET                         | jornades: 3, 4, 7, 8, 10, 11, 12, 13, 14, 16, 18, 20, 21, 22, 23, 24, 25, 26 | existent
+Tapia                | TAPIA PALACIO, CLARA                     | jornades: 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 | existent
+Banquillo            | Banquillo                                | jornades: 8 | NOVA
+Masa                 | MASA CARNE, JUDITH                       | jornades: 9, 10, 11, 15, 16, 18, 20, 21, 23, 24, 25, 26 | existent
+Neyhart              | J. NEYHART MORA                          | jornades: 9, 11, 13, 14 | NOVA
+Bernal               | BERNAL IBARRIA, NURIA                    | jornades: 15, 16, 18, 20, 21, 22, 23, 24, 25, 26 | existent
+Ibáñez               | M. IBÁÑEZ GRANERO                        | jornades: 17, 19 | NOVA
+Robles               | M. ROBLES SANABRIA                       | jornades: 20, 22 | NOVA
+Entrenador           | Entrenador                               | jornades: 21 | NOVA
+Carretero            | M. CARRETERO SOLER                       | jornades: 22 | NOVA
+Tost                 | B. TOST SANCHEZ                          | jornades: 25 | NOVA

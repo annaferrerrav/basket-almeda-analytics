@@ -1,0 +1,96 @@
+[1780482545.475][INFO]: Starting ChromeDriver 148.0.7778.178 (d096af1c9e98c45c3596e59620622b1a049bfecb-refs/branch-heads/7778@{#3196}) on port 63122
+[1780482545.475][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1780482545.492][INFO]: ChromeDriver was started successfully on port 63122
+[1780482545.919][INFO]: [02c672be5d765c8c7ccde31046e51058] COMMAND InitSession {
+   "capabilities": {
+      "alwaysMatch": {
+         "browserName": "chrome",
+         "browserVersion": null,
+         "goog:chromeOptions": {
+            "args": [ "--user-data-dir=C:\\Users\\aferrerr\\AppData\\Local\\Temp\\tmpqzmh6k92", "--no-first-run", "--no-default-browser-check", "--disable-extensions", "--remote-debugging-port=0" ],
+            "binary": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+            "extensions": [  ]
+         },
+         "pageLoadStrategy": "normal"
+      },
+      "firstMatch": [ {
+      } ]
+   }
+}
+[1780482545.920][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1780482545.921][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1780482545.923][INFO]: ChromeDriver supports communication with Chrome via pipes. This is more reliable and more secure.
+[1780482545.923][INFO]: Use the --remote-debugging-pipe Chrome switch instead of the default --remote-debugging-port to enable this communication mode.
+[1780482545.926][INFO]: Launching chrome: "C:\Program Files\Google\Chrome\Application\chrome.exe" --allow-pre-commit-input --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-client-side-phishing-detection --disable-default-apps --disable-extensions --disable-features=IgnoreDuplicateNavs,Prewarm --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-automation --enable-logging=stderr --log-level=0 --no-default-browser-check --no-first-run --no-service-autorun --password-store=basic --remote-debugging-port=0 --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\aferrerr\AppData\Local\Temp\tmpqzmh6k92"
+[38480:45128:0603/122906.134:INFO:chrome\browser\browsing_data\browsing_data_lifetime_policy_handler.cc:125] The policy ClearBrowsingDataOnExitList automatically disabled the following sync types: passwords, autofill, payments, cookies
+[38480:45128:0603/122906.289:INFO:components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc:238] No machine level policy manager exists.
+[38480:45128:0603/122906.312:INFO:chrome\browser\browsing_data\browsing_data_lifetime_policy_handler.cc:125] The policy ClearBrowsingDataOnExitList automatically disabled the following sync types: passwords, autofill, payments, cookies
+
+DevTools listening on ws://127.0.0.1:63726/devtools/browser/b82537aa-9a40-421b-8cc4-91190a239018
+[1780482547.344][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[38480:23524:0603/122910.794:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Created TensorFlow Lite XNNPACK delegate for CPU.
+[38480:23524:0603/122936.203:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[38480:23524:0603/123026.631:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[38480:45128:0603/123149.046:ERROR:chrome\browser\ui\webui\ntp\new_tab_ui.cc:54] Requested load of chrome://newtab/ for incorrect profile type.

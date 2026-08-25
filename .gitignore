@@ -1,0 +1,24 @@
+# Entorn virtual i cache de Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Informes de scouting en .docx (43 MB de binaris, no fan diff útil).
+# Es queden al disc local, fora del repo.
+25-26/data/report/
+
+# Volcats de depuració del scraper de PBP (~9 MB de JSON regenerable)
+almeda_pbp/scraping_pbp/feb_debug_*.json
+
+# Sortida del Developer > Scraper PBP: fitxers pendents de revisar a mà
+# abans de moure'ls a <temporada>/data/pbp/
+dades/pbp_desenvolupament/
+
+# Secrets de Streamlit (mai al repo, ni tan sols privat)
+.streamlit/secrets.toml
+
+# Fitxers de bloqueig d'Office i brossa del sistema
+~$*
+Thumbs.db
+.DS_Store

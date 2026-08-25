@@ -1,0 +1,33 @@
+# Correspondència entre els noms curts del PBP i els de l'acta oficial.
+#
+#     "Tierno" = "TIERNO MARTÍ, LAURA"
+#
+# Deixa-ho buit ("") si una jugadora del PBP no surt a cap acta descarregada,
+# o si el nom curt no correspon a ningú. Les que ja estan plenes s'han trobat
+# soles perquè el nom curt hi apareix sencer i sense ambigüitat.
+#
+# Per refrescar la llista quan es descarreguin actes noves:
+#     python -m almeda_pbp.jugadores
+# El que ja hi hagi escrit no es perd mai.
+
+[noms]
+"Balibrea" = "BALIBREA OLIVERAS, CLAUDIA"
+"Bernal" = "BERNAL IBARRIA, NURIA"
+"Bet" = "TOST SANCHEZ, BET"
+"Carlota" = "DIAZ-GUERRA PRATS, CARLOTA"
+"Cojo" = "COJOCARIU, ANDREEA MARIA"
+"Dana" = "PERIS FONS, DANA"
+"Ivet" = "HOMS FATJO, IVET"
+"Jové" = "JOVE FUSTE, LAIA"
+"Llodra" = "LLODRA JAEN, MARIA"
+"Mar" = "COLL-VINENT OLLE, MAR"
+"Maria Ibáñez" = "IBÁÑEZ GRANERO, MARIA"
+"Marina" = "GARCIA MENÉNDEZ, MARINA"
+"Mariona" = "CARRETERO SOLER, MARIONA"
+"Masa" = "MASA CARNE, JUDITH"
+"Moreno" = "MORENO MENGIBAR, CARLA"
+"Neyhart" = "NEYHART MORA, JUDITH"
+"Puyi" = "PUJOL MARTINEZ, CRISTINA"
+"Robles" = "ROBLES SANABRIA, MARINA"
+"Tapia" = "TAPIA PALACIO, CLARA"
+"Tierno" = "TIERNO MARTÍ, LAURA"
