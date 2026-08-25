@@ -22,3 +22,7 @@ dades/pbp_desenvolupament/
 ~$*
 Thumbs.db
 .DS_Store
+
+# Marcador local: activa la secció Developer només en aquesta màquina.
+# Vegeu almeda_pbp/config.py > mode_dev(). Mai ha d’arribar al repo.
+.mode_dev

@@ -33,6 +33,31 @@ TEMPORADES = [
 ]
 
 
+# --- Mode desenvolupament -------------------------------------------------
+
+# La secció «Developer» de l'app (scraper de PBP i informe a mida) només té
+# sentit a l'ordinador de l'analista: el scraper obre un Chromium real amb
+# Playwright, que no és a requirements.txt ni existeix a Streamlit Cloud, i
+# l'informe a mida escriu al disc local. Desplegades al núvol serien dues
+# pàgines que el cos tècnic veuria i que només poden fallar.
+#
+# El senyal és un fitxer marcador buit a l'arrel, `.mode_dev`, que està al
+# .gitignore: hi és en local i mai arriba al repo, per tant mai al núvol. La
+# variable d'entorn ALMEDA_DEV=1 fa el mateix per a usos puntuals. No es fa
+# servir cap detecció automàtica de "sóc a Streamlit Cloud" perquè no n'hi ha
+# cap de documentada, i endevinar-ho és el que voldríem evitar.
+FITXER_MODE_DEV = ARREL / ".mode_dev"
+
+
+def mode_dev() -> bool:
+    """Cert si l'app corre a la màquina de l'analista, amb les eines locals."""
+    import os
+
+    if os.environ.get("ALMEDA_DEV", "").strip() in {"1", "true", "True"}:
+        return True
+    return FITXER_MODE_DEV.exists()
+
+
 def feb_a_pbp(temporada_feb: str) -> str | None:
     """"2025-26" -> "25-26". None si la temporada no és a TEMPORADES."""
     for t in TEMPORADES:

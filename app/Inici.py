@@ -27,6 +27,14 @@ ARREL_APP = Path(__file__).resolve().parent
 if str(ARREL_APP) not in sys.path:
     sys.path.insert(0, str(ARREL_APP))
 
+# I l'arrel del repo perquè "import almeda_pbp" funcioni. En local colava
+# sense això només perquè el directori de treball (l'arrel, des d'on es fa
+# `streamlit run app/Inici.py`) acaba a sys.path; a Streamlit Cloud això no
+# es pot donar per fet, i sense aquesta línia l'app peta a l'arrencada.
+ARREL_REPO = ARREL_APP.parent
+if str(ARREL_REPO) not in sys.path:
+    sys.path.insert(0, str(ARREL_REPO))
+
 st.set_page_config(page_title="Basket Almeda", page_icon="🏀", layout="wide")
 
 from vistes import (  # noqa: E402
@@ -61,10 +69,14 @@ def _pagines_temporada(temporada: str) -> list[st.Page]:
 # Les seccions de temporada surten de config.TEMPORADES: afegir una
 # temporada nova és afegir-hi una entrada, no tocar aquest fitxer.
 seccions = {f"Temporada {t['etiqueta']}": _pagines_temporada(t["pbp"]) for t in cfg.TEMPORADES}
-seccions["Developer"] = [
-    st.Page(dev_scraper.pagina, title="Scraper PBP", icon="🛠️", url_path="dev-scraper"),
-    st.Page(dev_informe.pagina, title="Informe a mida", icon="🧩", url_path="dev-informe"),
-]
+# La secció Developer només s'afegeix a la màquina de l'analista (vegeu
+# `cfg.mode_dev()`): al núvol serien dues pàgines trencades a la vista del
+# cos tècnic, perquè depenen de Playwright i d'escriure al disc local.
+if cfg.mode_dev():
+    seccions["Developer"] = [
+        st.Page(dev_scraper.pagina, title="Scraper PBP", icon="🛠️", url_path="dev-scraper"),
+        st.Page(dev_informe.pagina, title="Informe a mida", icon="🧩", url_path="dev-informe"),
+    ]
 
 navegacio = st.navigation(seccions)
 navegacio.run()
