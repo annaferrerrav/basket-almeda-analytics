@@ -365,22 +365,70 @@ substitució" d'un error d'extracció).
 
 ## Desplegament a Streamlit Cloud
 
-L'app es desplega des del repo de GitHub (privat). Configuració:
+### Dos repos: codi públic, dades privades
+
+Streamlit Community Cloud només permet **una app privada per compte** — i el
+que compta com a "privada" és que el repo de GitHub sigui privat, no cap
+opció de l'app. Per poder desplegar aquesta app sense fer-la dependre de
+l'única plaça privada (ocupada per una altra), el projecte es reparteix en
+dos repos:
+
+- **`basket-almeda-analytics`** (aquest repo, públic): tot el codi. No conté
+  cap fitxer de dades — `25-26/data/pbp/`, `25-26/data/boxscore_jornada/`,
+  `dades/lf2.sqlite`, `dades/etiquetes_sistemes.toml` i
+  `dades/noms_jugadores.toml` són al `.gitignore`.
+- **`basket-almeda-analytics-dades`** (privat): exactament aquests fitxers,
+  amb la mateixa estructura de carpetes. Conté noms complets de jugadores,
+  per això és privat.
+
+En local, els fitxers de dades ja són al disc (com sempre) i l'app els
+llegeix directament — cap canvi en el dia a dia de l'analista. A Streamlit
+Cloud, el clonat inicial del repo públic no els porta; `app/_dades_remot.py`
+ho detecta a l'arrencada (mira si `dades/lf2.sqlite` existeix) i, si falten,
+descarrega el repo privat de dades via l'API de GitHub amb un token de
+només lectura (`almeda_pbp/sync_dades.py`, sense cap dependència de
+Streamlit: és pur Python, reutilitzable fora de l'app). Passa un sol cop per
+contenidor, no a cada rerun.
+
+### Configuració al diàleg de desplegament
 
 - **Main file path**: `app/Inici.py`
 - **Python version**: 3.11 o superior (`almeda_pbp/etiquetes.py` i
   `jugadores.py` fan servir `tomllib`, que és stdlib només a partir de 3.11).
-  Es tria a *Advanced settings* del diàleg de desplegament; no hi ha cap
-  fitxer al repo que ho fixi.
-- **Dades**: no cal configurar res. El PBP són els `.xlsx` del repo i el
-  boxscore surt de `dades/lf2.sqlite`, també versionat. L'app només llegeix.
-  Per actualitzar el que es veu al núvol: executar l'scraper en local, fer
-  commit del SQLite i push — Streamlit Cloud redesplega sol.
+  Es tria a *Advanced settings*; no hi ha cap fitxer al repo que ho fixi.
+- **Secrets** (*Advanced settings → Secrets*, format TOML):
+
+  ```toml
+  dades_github_token = "ghp_..."
+  # dades_repo = "annaferrerrav/basket-almeda-analytics-dades"  # per defecte
+  ```
+
+  El token ha de ser un **fine-grained personal access token** de GitHub
+  (Settings → Developer settings → Personal access tokens → Fine-grained
+  tokens) amb accés limitat **només** al repo `basket-almeda-analytics-dades`
+  i permís **Contents: Read-only** — cap més permís, cap altre repo. Sense
+  aquest secret configurat, l'app mostra un error clar a l'arrencada en lloc
+  de petar.
 - **Secció Developer**: no hi surt, i és volgut. Apareix només si
   `almeda_pbp.config.mode_dev()` és cert, és a dir si hi ha un fitxer buit
   `.mode_dev` a l'arrel (ignorat per git, per tant mai al núvol) o si
   `ALMEDA_DEV=1`. En una màquina nova cal crear el marcador per recuperar-la:
   `touch .mode_dev` (o `New-Item .mode_dev` a PowerShell).
 
-Els informes `.docx` de `25-26/data/report/` no són al repo (vegeu
-`.gitignore`), així que tampoc al núvol.
+### Actualitzar les dades
+
+Els fitxers de dades **ja no es publiquen fent push al repo de codi**. Cal
+fer-ho al repo de dades: després d'executar l'scraper o d'afegir un jornada
+nou en local, copiar els fitxers canviats (`25-26/data/pbp/`,
+`25-26/data/boxscore_jornada/`, `dades/lf2.sqlite`, etc.) a un clon local de
+`basket-almeda-analytics-dades`, fer commit i push allà. Streamlit Cloud no
+detecta aquest canvi automàticament: un cop `dades/lf2.sqlite` existeix al
+contenidor, `assegura_dades()` ja no torna a baixar res. Cal forçar un
+contenidor nou — un *reboot* des del panell de Streamlit Cloud, o qualsevol
+push al repo de codi que ja toqués redesplegar — perquè agafi les dades
+noves. (No verificat si un simple reboot sempre crea contenidor nou o de
+vegades reutilitza disc; si les dades no s'actualitzen amb un reboot, cal
+mirar-ho.)
+
+Els informes `.docx` de `25-26/data/report/` no són a cap dels dos repos
+(vegeu `.gitignore`), així que tampoc al núvol.

@@ -37,6 +37,14 @@ if str(ARREL_REPO) not in sys.path:
 
 st.set_page_config(page_title="Basket Almeda", page_icon="🏀", layout="wide")
 
+import _dades_remot  # noqa: E402
+
+# En local les dades ja són al disc i això no fa res. A Streamlit Cloud
+# (repo públic, sense dades) descarrega el repo privat de dades el primer
+# cop que arrenca el contenidor. Vegeu README.md > "Desplegament a
+# Streamlit Cloud".
+_dades_remot.assegura_dades()
+
 from vistes import (  # noqa: E402
     dev_informe,
     dev_scraper,

@@ -11,6 +11,16 @@ __pycache__/
 # Volcats de depuració del scraper de PBP (~9 MB de JSON regenerable)
 almeda_pbp/scraping_pbp/feb_debug_*.json
 
+# Dades amb noms reals de jugadores: viuen al repo privat
+# basket-almeda-analytics-dades, no aquí (aquest repo és públic). En local
+# es queden al disc tal qual; l'app les descarrega soles a Streamlit Cloud.
+# Vegeu almeda_pbp/sync_dades.py i app/_dades_remot.py.
+25-26/data/pbp/
+25-26/data/boxscore_jornada/
+dades/lf2.sqlite
+dades/etiquetes_sistemes.toml
+dades/noms_jugadores.toml
+
 # Sortida del Developer > Scraper PBP: fitxers pendents de revisar a mà
 # abans de moure'ls a <temporada>/data/pbp/
 dades/pbp_desenvolupament/
